@@ -1,4 +1,4 @@
-﻿using Pedidos.Domain.Event;
+﻿using Empleados.Domain.Event;
 using ShareKernel.Core;
 using ShareKernel.ValueObjects;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pedidos.Domain.Model.Empleado
+namespace Empleados.Domain.Model.Empleado
 {
     public class Empleado : AggregateRoot<Guid>
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pedidos.Domain.Event
+namespace Empleados.Domain.Event
 {
     public record EmpleadoCreado : DomainEvent
     {

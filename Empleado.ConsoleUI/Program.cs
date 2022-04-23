@@ -1,4 +1,4 @@
-﻿using Pedidos.Domain.Model.Empleado;
+﻿using Empleados.Domain.Model.Empleado;
 using System;
 
 namespace Pedidos.ConsoleUI
