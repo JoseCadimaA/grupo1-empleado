@@ -9,16 +9,23 @@ namespace Empleados.Infraestructure.MemoryRepository
 {
     public class MemoryDatabase
     {
-        private readonly List<Domain.Model.Empleado.Empleado> _pedidos;
+        private readonly List<Domain.Model.Empleado.Empleado> _empleados;
+        private readonly List<Domain.Model.Historico.HistoricoNavegacion> _historicos;
 
         public List<Domain.Model.Empleado.Empleado> Empleados
         {
-            get { return _pedidos; }
+            get { return _empleados; }
+        }
+
+        public List<Domain.Model.Historico.HistoricoNavegacion> Historicos
+        {
+            get { return _historicos; }
         }
 
         public MemoryDatabase()
         {
-            _pedidos = new List<Domain.Model.Empleado.Empleado>();
+            _empleados = new List<Domain.Model.Empleado.Empleado>();
+            _historicos = new List<Domain.Model.Historico.HistoricoNavegacion>();
         }
 
     }

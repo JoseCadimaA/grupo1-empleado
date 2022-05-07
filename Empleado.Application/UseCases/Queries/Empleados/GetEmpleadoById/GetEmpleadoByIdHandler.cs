@@ -1,5 +1,4 @@
-﻿using Empleados.Domain.Model.Empleado;
-using MediatR;
+﻿using MediatR;
 using Microsoft.Extensions.Logging;
 using Empleados.Domain.Repositories;
 using System;
@@ -25,7 +24,7 @@ namespace Empleados.Application.UseCases.Queries.Empleados.GetEmpleadoById
             EmpleadoDto result = null;
             try
             {
-                Empleado objEmpleado = await _empleadoRepository.FindByIdAsync(request.Id);
+                Domain.Model.Empleado.Empleado objEmpleado = await _empleadoRepository.FindByIdAsync(request.Id);
 
                 result = new EmpleadoDto()
                 {

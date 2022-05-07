@@ -27,6 +27,11 @@ namespace Empleados.Infraestructure.EF.Repository
             throw new NotImplementedException();
         }
 
+        public Task<Domain.Model.Empleado.Empleado> FindByFKAsync(Guid idFk)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<Domain.Model.Empleado.Empleado> FindByIdAsync(Guid id)
         {
             Console.WriteLine($"Retornando el empleado { id }");

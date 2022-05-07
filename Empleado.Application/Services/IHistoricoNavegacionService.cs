@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Empleados.Application.Services
 {
-    public interface IEmpleadoService 
+    public interface IHistoricoNavegacionService
     {        
 
     }

@@ -14,6 +14,7 @@ namespace Empleados.Infraestructure
             services.AddSingleton<MemoryDatabase>();
 
             services.AddScoped<IEmpleadoRepository, MemoryEmpleadoRepository>();
+            services.AddScoped<IHistoricoNavegacionRepository, MemoryHistoricoRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 

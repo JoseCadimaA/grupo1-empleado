@@ -18,6 +18,10 @@ namespace Empleados.Application
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddTransient<IEmpleadoService, EmpleadoService>();
             services.AddTransient<IEmpleadoFactory, EmpleadoFactory>();
+            services.AddTransient<IHistoricoNavegacionFactory, HistoricoNavegacionFactory>();
+
+            services.AddTransient<IHistoricoNavegacionService, HistoricoNavegacionService>();
+            
 
 
 

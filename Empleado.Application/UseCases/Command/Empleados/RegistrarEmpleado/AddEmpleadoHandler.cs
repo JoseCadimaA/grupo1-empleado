@@ -32,8 +32,8 @@ namespace Empleados.Application.UseCases.Command.Empleados.CrearEmpleado
         public async Task<Guid> Handle(AddEmpleadoCommand request, CancellationToken cancellationToken)
         {
             try
-            {                
-                Empleado objEmpleado = _empleadoFactory.Create(request.NombreCompleto, request.FechaNacimiento, request.CI);
+            {
+                Domain.Model.Empleado.Empleado objEmpleado = _empleadoFactory.Create(request.NombreCompleto, request.FechaNacimiento, request.CI);
           
                 objEmpleado.RegistrarEmpleado();
 

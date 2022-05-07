@@ -8,6 +8,6 @@ namespace Empleados.Application.Services
 {
     public class EmpleadoService : IEmpleadoService
     {
-        public Task<string> GenerarNroPedidoAsync() => Task.FromResult("ABC");
+       
     }
 }

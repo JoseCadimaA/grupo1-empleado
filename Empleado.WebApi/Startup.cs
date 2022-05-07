@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Pedidos.WebApi
+namespace Empleados.WebApi
 {
     public class Startup
     {

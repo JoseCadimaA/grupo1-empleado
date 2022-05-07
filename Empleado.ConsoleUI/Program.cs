@@ -1,7 +1,7 @@
 ﻿using Empleados.Domain.Model.Empleado;
 using System;
 
-namespace Pedidos.ConsoleUI
+namespace Empleados.ConsoleUI
 {
     static class Program
     {
