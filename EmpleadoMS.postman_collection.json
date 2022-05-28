@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "42530c30-3027-4a86-bbdd-7f17c69763b4",
+		"name": "EmpleadoMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add_empleado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    let respuesta = pm.response.text();\r",
+							"    pm.environment.set(\"empleado_id\", respuesta.substring(1, respuesta.length - 1));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Respuesta no vacía\", function () {\r",
+							"    pm.expect(pm.response.text()).not.empty;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombreCompleto\": \"Pepe Manuel Cadima Aponte\",\r\n  \"fechaNacimiento\": \"1996-10-04T11:13:05.583Z\",\r\n  \"ci\": \"8137916\"\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44349/api/Empleado",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44349",
+					"path": [
+						"api",
+						"Empleado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_Empleado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"\r",
+							"    let responseJSON = pm.response.json();\r",
+							" \r",
+							"                \r",
+							"        pm.test('tiene NombreCompleto', function () {\r",
+							"            pm.expect(responseJSON).to.have.property('nombreCompleto');\r",
+							"            \r",
+							"        })\r",
+							"\r",
+							"        pm.test('tiene FechaNacimiento', function () {\r",
+							"            pm.expect(responseJSON).to.have.property('fechaNacimiento');            \r",
+							"        })\r",
+							"\r",
+							"        pm.test('tiene CI', function () {\r",
+							"            pm.expect(responseJSON).to.have.property('ci');\r",
+							"            \r",
+							"        })\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Respuesta no vacía\", function () {\r",
+							"    pm.expect(pm.response).not.empty;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44349/api/Empleado/{{empleado_id}}",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44349",
+					"path": [
+						"api",
+						"Empleado",
+						"{{empleado_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44349/api/Empleado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    let respuesta = pm.response.text();\r",
+							"    pm.environment.set(\"empleado_id\", respuesta.substring(1, respuesta.length - 1));\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+							"});\r",
+							"pm.test(\"Respuesta no vacía\", function () {\r",
+							"    pm.expect(pm.response.text()).not.empty;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombreCompleto\": \"José Manuel Cadima Aponte\",\r\n  \"fechaNacimiento\": \"1996-10-04T11:13:05.583Z\",\r\n  \"ci\": \"8137916\"\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44349/api/Empleado",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44349",
+					"path": [
+						"api",
+						"Empleado"
+					]
+				},
+				"description": "Empleado"
+			},
+			"response": []
+		}
+	]
+}
