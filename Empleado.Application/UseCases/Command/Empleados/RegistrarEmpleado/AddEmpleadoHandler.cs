@@ -15,16 +15,14 @@ namespace Empleados.Application.UseCases.Command.Empleados.CrearEmpleado
     {
         private readonly IEmpleadoRepository _empleadoRepository;
         private readonly ILogger<AddEmpleadoHandler> _logger;
-        private readonly IEmpleadoService _empleadoService;
         private readonly IEmpleadoFactory _empleadoFactory;
         private readonly IUnitOfWork _unitOfWork;
 
         public AddEmpleadoHandler(IEmpleadoRepository empleadoRepository, ILogger<AddEmpleadoHandler> logger,
-            IEmpleadoService empleadoService, IEmpleadoFactory empleadoFactory, IUnitOfWork unitOfWork)
+              IEmpleadoFactory empleadoFactory, IUnitOfWork unitOfWork)
         {
             _empleadoRepository = empleadoRepository;
             _logger = logger;
-            _empleadoService = empleadoService;
             _empleadoFactory = empleadoFactory;
             _unitOfWork = unitOfWork;
         }

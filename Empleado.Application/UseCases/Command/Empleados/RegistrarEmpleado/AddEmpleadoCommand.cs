@@ -1,5 +1,4 @@
-﻿using Empleados.Domain.Model.Historico;
-using MediatR;
+﻿using MediatR;
 using System;
 using System.Collections.Generic;
 

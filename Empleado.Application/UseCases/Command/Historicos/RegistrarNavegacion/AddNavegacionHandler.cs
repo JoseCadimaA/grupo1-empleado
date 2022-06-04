@@ -7,7 +7,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Empleados.Domain.Model.Historico;
-using Empleados.Application.UseCases.Command.Historico.AddNavegacionCommand;
+using Empleados.Application.UseCases.Command.Historicos.AddNavegacion;
 
 namespace Empleados.Application.UseCases.Command.Empleados.CrearEmpleado
 {
@@ -15,16 +15,14 @@ namespace Empleados.Application.UseCases.Command.Empleados.CrearEmpleado
     {
         private readonly IHistoricoNavegacionRepository _historicoRepository;
         private readonly ILogger<AddNavegacionHandler> _logger;
-        private readonly IHistoricoNavegacionService _historicoService;
         private readonly IHistoricoNavegacionFactory _historicoFactory;
         private readonly IUnitOfWork _unitOfWork;
 
         public AddNavegacionHandler(IHistoricoNavegacionRepository historicoRepository, ILogger<AddNavegacionHandler> logger,
-            IHistoricoNavegacionService historicoService, IHistoricoNavegacionFactory historicoFactory, IUnitOfWork unitOfWork)
+            IHistoricoNavegacionFactory historicoFactory, IUnitOfWork unitOfWork)
         {
             _historicoRepository = historicoRepository;
             _logger = logger;
-            _historicoService = historicoService;
             _historicoFactory = historicoFactory;
             _unitOfWork = unitOfWork;
         }
@@ -33,7 +31,7 @@ namespace Empleados.Application.UseCases.Command.Empleados.CrearEmpleado
         {
             try
             {
-                HistoricoNavegacion objHistorico = _historicoFactory.Create(request.EmpleadoID, request.HorasRealizada, request.Millas, request.Origen, request.Destino);
+                HistoricoNavegacion objHistorico = _historicoFactory.Create(request.EmpleadoID.ToString(), request.HorasRealizada, request.Millas, request.Origen, request.Destino);
                           
 
                 await _historicoRepository.RegistrarNavegacion(objHistorico);
