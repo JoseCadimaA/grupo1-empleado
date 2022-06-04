@@ -1,7 +1,7 @@
 ﻿using Empleado.Application.Dto.Historicos;
 using Empleados.Application.Dto.Empleados;
 using Empleados.Application.UseCases.Command.Empleados.AddEmpleado;
-using Empleados.Application.UseCases.Command.Historico.AddNavegacionCommand;
+using Empleados.Application.UseCases.Command.Historicos.AddNavegacion;
 using Empleados.Application.UseCases.Queries.Empleados.GetEmpleadoById;
 using Empleados.Application.UseCases.Queries.Empleados.GetHistoricoByIdEmpleado;
 using MediatR;
@@ -36,7 +36,7 @@ namespace Empleados.WebApi.Controllers
 
         [Route("{id:guid}")]
         [HttpGet]
-        public async Task<IActionResult> GetEmpleadoById([FromRoute] GetEmpleadoByIdQuery command)
+        public async Task<IActionResult> GetEmpleadoById([FromBody] GetEmpleadoByIdQuery command)
         {
             EmpleadoDto result = await _mediator.Send(command);
 
@@ -49,7 +49,7 @@ namespace Empleados.WebApi.Controllers
 
         [Route("AddHistorico")]
         [HttpPost]
-        public async Task<IActionResult> AddHistorico([FromRoute] AddNavegacionCommand command)
+        public async Task<IActionResult> AddHistorico([FromBody] AddNavegacionCommand command)
         {
             Guid id = await _mediator.Send(command);
 
@@ -63,7 +63,7 @@ namespace Empleados.WebApi.Controllers
 
         [Route("GetHistorico/{IdEmpleado:guid}")]
         [HttpGet]
-        public async Task<IActionResult> GetHistorico([FromRoute] GetHistoricoByIdEmpleadoQuery command)
+        public async Task<IActionResult> GetHistorico([FromBody] GetHistoricoByIdEmpleadoQuery command)
         {
             HistoricoNavegacionDto result = await _mediator.Send(command);
 
