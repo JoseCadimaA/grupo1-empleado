@@ -12,6 +12,6 @@ namespace ShareKernel.Core
 
         Task CreateAsync(T obj);
 
-        Task<T> FindByFKAsync(TId idFk);
+        Task<T> FindByFKAsync(string idFk);
     }
 }

@@ -22,11 +22,6 @@ namespace Empleados.Application
             services.AddTransient<IHistoricoNavegacionService, HistoricoNavegacionService>();
             services.AddTransient<IHistoricoNavegacionFactory, HistoricoNavegacionFactory>();
 
-            
-            
-
-
-
             return services;
         }
 

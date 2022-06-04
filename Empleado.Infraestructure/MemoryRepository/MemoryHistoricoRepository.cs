@@ -25,9 +25,9 @@ namespace Empleados.Infraestructure.MemoryRepository
             return Task.CompletedTask;
         }
 
-        public Task<HistoricoNavegacion> FindByFKAsync(Guid idFk)
+        public Task<HistoricoNavegacion> FindByFKAsync(string idFk)
         {
-            return Task.FromResult(_database.Historicos.FirstOrDefault(x => x.Id == idFk));
+            return Task.FromResult(_database.Historicos.FirstOrDefault(x => x.EmpleadoID == idFk));
         }
 
         public Task<HistoricoNavegacion> FindByIdAsync(Guid id)

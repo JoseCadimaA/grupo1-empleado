@@ -65,7 +65,9 @@ namespace Empleados.Infraestructure.MemoryRepository
             return Task.CompletedTask;
         }
 
-        public Task<Domain.Model.Empleado.Empleado> FindByFKAsync(Guid idFk)
+   
+
+        public Task<Domain.Model.Empleado.Empleado> FindByFKAsync(string idFk)
         {
             throw new NotImplementedException();
         }
