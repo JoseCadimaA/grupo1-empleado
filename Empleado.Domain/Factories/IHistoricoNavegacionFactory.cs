@@ -9,6 +9,6 @@ namespace Empleados.Domain.Factories
 {
     public interface IHistoricoNavegacionFactory
     {
-        HistoricoNavegacion Create(Guid empleadoID, int horasRealizada, int millas, string origen, string destino);       
+        HistoricoNavegacion Create(string empleadoID, int horasRealizada, int millas, string origen, string destino);       
     }
 }
