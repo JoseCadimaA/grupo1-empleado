@@ -2,10 +2,11 @@
 using Empleados.Infraestructure.EF;
 using Empleados.Infraestructure.MemoryRepository;
 using Microsoft.Extensions.DependencyInjection;
-
+using System.Diagnostics.CodeAnalysis;
 
 namespace Empleados.Infraestructure
 {
+    [ExcludeFromCodeCoverage]
     public static class Extensions
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)

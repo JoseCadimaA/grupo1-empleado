@@ -11,7 +11,7 @@ namespace Empleados.Domain.Repositories
     public interface IEmpleadoRepository : IRepository<Empleado, Guid>
     {
         Task RegistrarEmpleado(Empleado obj);
-        Task ObtenerListaEmpleados();
+      
 
     }
 }

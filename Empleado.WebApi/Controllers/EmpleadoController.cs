@@ -36,7 +36,7 @@ namespace Empleados.WebApi.Controllers
 
         [Route("{id:guid}")]
         [HttpGet]
-        public async Task<IActionResult> GetEmpleadoById([FromBody] GetEmpleadoByIdQuery command)
+        public async Task<IActionResult> GetEmpleadoById([FromRoute] GetEmpleadoByIdQuery command)
         {
             EmpleadoDto result = await _mediator.Send(command);
 
@@ -61,9 +61,9 @@ namespace Empleados.WebApi.Controllers
 
 
 
-        [Route("GetHistorico/{IdEmpleado:guid}")]
+        [Route("GetHistorico/{EmpleadoID:guid}")]
         [HttpGet]
-        public async Task<IActionResult> GetHistorico([FromBody] GetHistoricoByIdEmpleadoQuery command)
+        public async Task<IActionResult> GetHistorico([FromRoute] GetHistoricoByIdEmpleadoQuery command)
         {
             HistoricoNavegacionDto result = await _mediator.Send(command);
 

@@ -8,9 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Empleados.Application.Services;
 using Empleados.Domain.Factories;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Empleados.Application
 {
+    [ExcludeFromCodeCoverage]
     public static class Extensions
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)

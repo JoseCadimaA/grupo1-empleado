@@ -23,37 +23,12 @@ namespace Empleados.Infraestructure.MemoryRepository
             return Task.FromResult(_database.Empleados.FirstOrDefault(x => x.Id == id));
         }
 
-        public Task UpdateAsync(Domain.Model.Empleado.Empleado obj)
-        {
-            return Task.CompletedTask;
-        }
-
         public Task RegistrarEmpleado(Domain.Model.Empleado.Empleado obj)
         {
             _database.Empleados.Add(obj);
             return Task.CompletedTask;
-        }
-
-        public Task ActualizarEmpleado(Domain.Model.Empleado.Empleado obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task EliminarEmpleado(Domain.Model.Empleado.Empleado obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task ObtenerEmpleadoByTipo(string tipo)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task ObtenerListaEmpleados()
-        {
-            throw new NotImplementedException();
-        }
-
+        }       
+     
         Task<Domain.Model.Empleado.Empleado> IRepository<Domain.Model.Empleado.Empleado, Guid>.FindByIdAsync(Guid id)
         {
             return Task.FromResult(_database.Empleados.FirstOrDefault(x => x.Id == id));
