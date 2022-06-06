@@ -38,7 +38,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"nombreCompleto\": \"Pepe Manuel Cadima Aponte\",\r\n  \"fechaNacimiento\": \"1996-10-04T11:13:05.583Z\",\r\n  \"ci\": \"8137916\"\r\n}"
+					"raw": "{\r\n  \"nombreCompleto\": \"Juan Manuel Cadima Aponte\",\r\n  \"fechaNacimiento\": \"1996-10-04T11:13:05.583Z\",\r\n  \"ci\": \"8137916\"\r\n}"
 				},
 				"url": {
 					"raw": "https://localhost:44349/api/Empleado",
@@ -126,7 +126,7 @@
 			"response": []
 		},
 		{
-			"name": "https://localhost:44349/api/Empleado",
+			"name": "Add_historico",
 			"event": [
 				{
 					"listen": "test",
@@ -135,16 +135,13 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"    let respuesta = pm.response.text();\r",
-							"    pm.environment.set(\"empleado_id\", respuesta.substring(1, respuesta.length - 1));\r",
+							"    pm.environment.set(\"historico_id\", respuesta.substring(1, respuesta.length - 1));\r",
 							"});\r",
 							"\r",
-							"\r",
-							"pm.test(\"Successful POST request\", function () {\r",
-							"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
-							"});\r",
 							"pm.test(\"Respuesta no vacía\", function () {\r",
 							"    pm.expect(pm.response.text()).not.empty;\r",
-							"});"
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -155,16 +152,16 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
+						"value": "application/json",
+						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"nombreCompleto\": \"José Manuel Cadima Aponte\",\r\n  \"fechaNacimiento\": \"1996-10-04T11:13:05.583Z\",\r\n  \"ci\": \"8137916\"\r\n}"
+					"raw": "{\r\n    \"EmpleadoID\": \"{{empleado_id}}\",\r\n    \"HorasRealizada\": \"2\",\r\n    \"Millas\": \"1000\",\r\n    \"Origen\": \"SC\",\r\n    \"Destino\": \"LP\"\r\n}"
 				},
 				"url": {
-					"raw": "https://localhost:44349/api/Empleado",
+					"raw": "https://localhost:44349/api/Empleado/AddHistorico",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -172,10 +169,88 @@
 					"port": "44349",
 					"path": [
 						"api",
-						"Empleado"
+						"Empleado",
+						"AddHistorico"
 					]
-				},
-				"description": "Empleado"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_historico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"\r",
+							"    let responseJSON = pm.response.json();\r",
+							" \r",
+							"                \r",
+							"        pm.test('tiene id', function () {\r",
+							"            pm.expect(responseJSON).to.have.property('id');\r",
+							"            \r",
+							"        })\r",
+							"\r",
+							"        pm.test('tiene empleadoID', function () {\r",
+							"            pm.expect(responseJSON).to.have.property('empleadoID');            \r",
+							"        })\r",
+							"\r",
+							"        pm.test('tiene horasRealizada', function () {\r",
+							"            pm.expect(responseJSON).to.have.property('horasRealizada');\r",
+							"            \r",
+							"        })\r",
+							"\r",
+							"        pm.test('tiene millas', function () {\r",
+							"            pm.expect(responseJSON).to.have.property('millas');\r",
+							"            \r",
+							"        })\r",
+							"\r",
+							"        pm.test('tiene origen', function () {\r",
+							"            pm.expect(responseJSON).to.have.property('origen');\r",
+							"            \r",
+							"        })\r",
+							"\r",
+							"        pm.test('tiene destino', function () {\r",
+							"            pm.expect(responseJSON).to.have.property('destino');\r",
+							"            \r",
+							"        })\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Respuesta no vacía\", function () {\r",
+							"    pm.expect(pm.response).not.empty;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44349/api/Empleado/GetHistorico/{{empleado_id}}",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44349",
+					"path": [
+						"api",
+						"Empleado",
+						"GetHistorico",
+						"{{empleado_id}}"
+					]
+				}
 			},
 			"response": []
 		}
