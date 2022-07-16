@@ -16,17 +16,23 @@ namespace Empleados.WebApi.Controllers
     [Route("/api/[controller]")]
     public class EmpleadoController : ControllerBase
     {
-        private readonly IMediator _mediator;        
+        private readonly IMediator _mediator;   
 
         public EmpleadoController(IMediator mediator)
         {
             _mediator = mediator;
+              _mediator = mediator;
         }
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] AddEmpleadoCommand command)
         {
             Guid id = await _mediator.Send(command);
+
+            if (id == Guid.Empty)
+            {
+
+            }
 
             if (id == Guid.Empty)
                 return BadRequest();

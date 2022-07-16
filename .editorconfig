@@ -1,0 +1,6 @@
+root = true
+
+[*.{cs,vb}]
+dotnet_diagnostic.IDE0005.severity = error
+
+dotnet_diagnostic.IDE0055.severity = error
