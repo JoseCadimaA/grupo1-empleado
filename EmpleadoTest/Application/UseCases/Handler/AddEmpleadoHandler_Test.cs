@@ -18,10 +18,8 @@ using ShareKernel.Core;
 using Empleados.Domain.Event;
 using Empleados.Application.UseCases.Queries.Empleados.GetEmpleadoById;
 
-namespace EmpleadoTest.Application.UseCases.Handler
-{
-    public class AddEmpleadoHandler_Test
-    {
+namespace EmpleadoTest.Application.UseCases.Handler {
+    public class AddEmpleadoHandler_Test {
 
         private readonly Mock<IEmpleadoRepository> empleadoRepository;
         private readonly Mock<ILogger<AddEmpleadoHandler>> logger;
@@ -35,12 +33,11 @@ namespace EmpleadoTest.Application.UseCases.Handler
         private DateTime fechaNacimientoTest = new DateTime(1996, 10, 04);
         private string ciTest = "8137916";
 
-        public AddEmpleadoHandler_Test()
-        {
+        public AddEmpleadoHandler_Test() {
             empleadoRepository = new Mock<IEmpleadoRepository>();
             logger = new Mock<ILogger<AddEmpleadoHandler>>();
             empleadoFactory = new Mock<IEmpleadoFactory>();
-            unitOfWork = new Mock<IUnitOfWork>()   ;
+            unitOfWork = new Mock<IUnitOfWork>();
 
             loggerGetEmpleado = new Mock<ILogger<GetEmpleadoByIdQuery>>();
 
@@ -51,8 +48,7 @@ namespace EmpleadoTest.Application.UseCases.Handler
 
 
         [Fact]
-        public void CrearEmpleadoHandler_HandleCorrectly()
-        {
+        public void CrearEmpleadoHandler_HandleCorrectly() {
             //_empleadoService.Setup(empleadoService => empleadoService  .GenerarNroPedidoAsync()).Returns(Task.FromResult(nroPedidoTest));
             empleadoFactory.Setup(empleadoFactory => empleadoFactory.Create(nombreCompletoTest, fechaNacimientoTest, ciTest)).Returns(objEmpleadoTest);
 
@@ -63,7 +59,7 @@ namespace EmpleadoTest.Application.UseCases.Handler
                 unitOfWork.Object
             );
             var objRequest = new AddEmpleadoCommand(nombreCompletoTest, fechaNacimientoTest, ciTest);
-     
+
             var tcs = new CancellationTokenSource(1000);
             var result = objHandler.Handle(objRequest, tcs.Token);
 

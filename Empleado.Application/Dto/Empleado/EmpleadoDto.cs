@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Empleados.Application.Dto.Empleados
-{
-    public class EmpleadoDto
-    {
+namespace Empleados.Application.Dto.Empleados {
+    public class EmpleadoDto {
         public Guid Id { get; set; }
         public string NombreCompleto { get; set; }
 
@@ -15,9 +13,8 @@ namespace Empleados.Application.Dto.Empleados
 
         public string CI { get; set; }
 
-        public EmpleadoDto()
-        {
-            
+        public EmpleadoDto() {
+
         }
     }
 }

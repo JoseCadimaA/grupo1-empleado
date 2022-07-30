@@ -5,12 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Empleados.Domain.Factories
-{
-    public class HistoricoNavegacionFactory : IHistoricoNavegacionFactory
-    {
-        public HistoricoNavegacion Create(string empleadoID, int horasRealizada, int millas, string origen, string destino)
-        {
+namespace Empleados.Domain.Factories {
+    public class HistoricoNavegacionFactory : IHistoricoNavegacionFactory {
+        public HistoricoNavegacion Create(string empleadoID, int horasRealizada, int millas, string origen, string destino) {
             return new HistoricoNavegacion(empleadoID, horasRealizada, millas, origen, destino);
         }
     }

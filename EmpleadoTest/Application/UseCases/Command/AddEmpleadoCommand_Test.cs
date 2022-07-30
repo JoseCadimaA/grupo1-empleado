@@ -6,13 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace EmpleadoTest.Application.UseCases.Command
-{
-    public class AddEmpleadoCommand_Test
-    {
+namespace EmpleadoTest.Application.UseCases.Command {
+    public class AddEmpleadoCommand_Test {
         [Fact]
-        public void IsRequest_Valid()
-        {
+        public void IsRequest_Valid() {
             //(str/ing nombreCompleto, DateTime fechaNacimiento, string cI)
 
 
@@ -27,8 +24,7 @@ namespace EmpleadoTest.Application.UseCases.Command
 
 
         [Fact]
-        public void TestConstructor_IsPrivate()
-        {
+        public void TestConstructor_IsPrivate() {
             var command = (AddEmpleadoCommand)Activator.CreateInstance(typeof(AddEmpleadoCommand), true);
             Assert.Null(command.NombreCompleto);
         }
