@@ -15,8 +15,6 @@ namespace Empleados.WebApi.Controllers {
     public class EmpleadoController : ControllerBase {
         private readonly IMediator _mediator;
 
-        public int ColorID { get; set; }
-
         public EmpleadoController(IMediator mediator) {
             _mediator = mediator;
         }
