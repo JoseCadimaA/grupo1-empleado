@@ -16,18 +16,20 @@ namespace Empleados.Infraestructure.EF.Repository {
         }
 
         public Task<Domain.Model.Empleado.Empleado> FindByFKAsync(string idFk) {
-            return (Task<Domain.Model.Empleado.Empleado>)Task.CompletedTask;
+            return null;
         }
 
         public Task<Domain.Model.Empleado.Empleado> FindByIdAsync(Guid id) {
             Console.WriteLine($"Retornando el empleado { id }");
 
-            return (Task<Domain.Model.Empleado.Empleado>)Task.CompletedTask;
+            return null;
         }
 
         public Task RegistrarEmpleado(Domain.Model.Empleado.Empleado obj) {
             Console.WriteLine($"Insertando el empleado { obj.CI }");
             return Task.CompletedTask;
         }
+
+
     }
 }
