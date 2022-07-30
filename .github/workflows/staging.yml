@@ -2,12 +2,9 @@ name: Staging deployment
 
 on:
 	
-  pull_request:
-    types: [opened, reopened]
-    branches:
-      - 'main'
-	  
   push:
+    branches: [ "main" ]
+  pull_request:
     branches: [ "main" ]
 
 jobs:
