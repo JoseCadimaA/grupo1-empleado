@@ -48,5 +48,5 @@ jobs:
       run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"JoseCadimaA_grupo1-empleado" /o:"josecadimaa" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build --no-restore
-          dotnet test --no-build --verbosity normal
+          dotnet test --no-build --verbosity normal dotnet-coverage collect 'dotnet test EmpleadoTest' -f xml  -o 'coverage.xml' 
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
