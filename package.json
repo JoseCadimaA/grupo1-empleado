@@ -1,0 +1,28 @@
+{
+  "name": "grupo1_empleado_ms",
+  "version": "1.0.0",
+  "description": "Microservicio de modulo de Empleado",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseCadimaA/grupo1-empleado.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoseCadimaA/grupo1-empleado/issues"
+  },
+  "homepage": "https://github.com/JoseCadimaA/grupo1-empleado#readme",
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3"
+  },
+  "lint-staged": {
+    "*.cs": "dotnet-format --include"
+  }
+}

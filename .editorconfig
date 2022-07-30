@@ -1,6 +1,18 @@
+# Para obtener más información sobre los archivos .editorconfig, vea https://aka.ms/editorconfigdocs
 root = true
 
-[*.{cs,vb}]
-dotnet_diagnostic.IDE0005.severity = error
+
+
+[*.cs]
+
+indent_style = tab
+
+tab_size = 4
+
+
+# IDE0055: Fix formatting
 
 dotnet_diagnostic.IDE0055.severity = error
+[*.{cs,vb}]
+indent_style=space
+csharp_new_line_before_open_brace = false
