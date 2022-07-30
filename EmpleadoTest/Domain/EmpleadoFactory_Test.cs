@@ -6,13 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace EmpleadoTest.Domain
-{
-    public class EmpleadoFactory_Test
-    {
+namespace EmpleadoTest.Domain {
+    public class EmpleadoFactory_Test {
         [Fact]
-        public void Create_Correctly()
-        {
+        public void Create_Correctly() {
 
             var nombreCompletoTest = "Pepe Cadima";
             var fechaNacimientoTest = new DateTime(1996, 10, 04);

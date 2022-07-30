@@ -10,13 +10,10 @@ using Empleados.Application.Services;
 using Empleados.Domain.Factories;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Empleados.Application
-{
+namespace Empleados.Application {
     [ExcludeFromCodeCoverage]
-    public static class Extensions
-    {
-        public static IServiceCollection AddApplication(this IServiceCollection services)
-        {
+    public static class Extensions {
+        public static IServiceCollection AddApplication(this IServiceCollection services) {
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddTransient<IEmpleadoService, EmpleadoService>();
             services.AddTransient<IEmpleadoFactory, EmpleadoFactory>();

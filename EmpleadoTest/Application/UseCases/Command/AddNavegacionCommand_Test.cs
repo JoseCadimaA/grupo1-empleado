@@ -6,13 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace EmpleadoTest.Application.UseCases.Command
-{
-    public class AddNavegacionCommand_Test
-    {
+namespace EmpleadoTest.Application.UseCases.Command {
+    public class AddNavegacionCommand_Test {
         [Fact]
-        public void IsRequest_Valid()
-        {
+        public void IsRequest_Valid() {
             //string empleadoID, int horasRealizada, int millas, string origen, string destino
 
 
@@ -29,8 +26,7 @@ namespace EmpleadoTest.Application.UseCases.Command
 
 
         [Fact]
-        public void TestConstructor_IsPrivate()
-        {
+        public void TestConstructor_IsPrivate() {
             var command = (AddNavegacionCommand)Activator.CreateInstance(typeof(AddNavegacionCommand), true);
             Assert.Null(command.EmpleadoID);
         }

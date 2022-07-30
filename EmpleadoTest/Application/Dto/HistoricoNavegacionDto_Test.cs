@@ -6,16 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace EmpleadoTest.Application.Dto
-{
-    public class HistoricoNavegacionDto_Test
-    {
+namespace EmpleadoTest.Application.Dto {
+    public class HistoricoNavegacionDto_Test {
         [Fact]
-        public void IsData_Valid()
-        {
+        public void IsData_Valid() {
             var idTest = Guid.NewGuid();
             var empleadoIDTest = Guid.NewGuid().ToString();
-            var horasRealizadaTest=  2;
+            var horasRealizadaTest = 2;
             var millasTest = 1000;
             var origenTest = "SC";
             var destinoTest = "LP";
@@ -23,7 +20,7 @@ namespace EmpleadoTest.Application.Dto
             var objHistorico = new HistoricoNavegacionDto();
 
             Assert.Equal(Guid.Empty, objHistorico.Id);
-            Assert.Null( objHistorico.EmpleadoID);
+            Assert.Null(objHistorico.EmpleadoID);
             Assert.Equal(0, objHistorico.HorasRealizada);
             Assert.Equal(0, objHistorico.Millas);
             Assert.Null(objHistorico.Origen);

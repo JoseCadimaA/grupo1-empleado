@@ -5,10 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Empleados.Domain.Factories
-{
-    public interface IHistoricoNavegacionFactory
-    {
-        HistoricoNavegacion Create(string empleadoID, int horasRealizada, int millas, string origen, string destino);       
+namespace Empleados.Domain.Factories {
+    public interface IHistoricoNavegacionFactory {
+        HistoricoNavegacion Create(string empleadoID, int horasRealizada, int millas, string origen, string destino);
     }
 }

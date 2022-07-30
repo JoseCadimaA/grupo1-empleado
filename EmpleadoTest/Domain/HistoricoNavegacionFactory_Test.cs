@@ -6,13 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace EmpleadoTest.Domain
-{
-    public class HistoricoNavegacionFactory_Test
-    {
+namespace EmpleadoTest.Domain {
+    public class HistoricoNavegacionFactory_Test {
         [Fact]
-        public void IsData_Valid()
-        {
+        public void IsData_Valid() {
             var empleadoIDTest = Guid.NewGuid().ToString();
             var horasRealizadaTest = 2;
             var millasTest = 1000;
@@ -20,7 +17,7 @@ namespace EmpleadoTest.Domain
             var destinoTest = "LP";
 
             var factory = new HistoricoNavegacionFactory();
-            var objHistorico = factory.Create(empleadoIDTest, 2, 1000, "SC", "LP" );
+            var objHistorico = factory.Create(empleadoIDTest, 2, 1000, "SC", "LP");
 
             Assert.NotNull(objHistorico);
             Assert.Equal(empleadoIDTest, objHistorico.EmpleadoID);

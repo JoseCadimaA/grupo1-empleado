@@ -6,14 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace EmpleadoTest.Application.Dto
-{
-    public class EmpleadoDto_Test
-    {
+namespace EmpleadoTest.Application.Dto {
+    public class EmpleadoDto_Test {
 
         [Fact]
-        public void IsData_Valid()
-        {
+        public void IsData_Valid() {
             /*
                 public Guid Id { get; set; }
                 public string NombreCompleto { get; set; }
@@ -42,7 +39,7 @@ namespace EmpleadoTest.Application.Dto
             Assert.Equal(fechaNacimientoTest, objEmpleadoDto.FechaNacimiento);
             Assert.Equal(ciTest, objEmpleadoDto.CI);
 
-   
+
         }
     }
 }

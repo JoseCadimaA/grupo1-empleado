@@ -6,13 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace EmpleadoTest.Application.UseCases.Queries
-{
-    public class GetHistoricoByIdEmpleadoQuery_Test
-    {
+namespace EmpleadoTest.Application.UseCases.Queries {
+    public class GetHistoricoByIdEmpleadoQuery_Test {
         [Fact]
-        public void IsRequest_Valid()
-        {
+        public void IsRequest_Valid() {
             var id_Test = Guid.NewGuid();
             var empleadoId_Test = "60cfbed6-f6b2-42aa-a024-91e240555e1e";
 
@@ -25,8 +22,7 @@ namespace EmpleadoTest.Application.UseCases.Queries
 
 
         [Fact]
-        public void TestConstructor_IsPrivate()
-        {
+        public void TestConstructor_IsPrivate() {
             var command = (GetHistoricoByIdEmpleadoQuery)Activator.CreateInstance(typeof(GetHistoricoByIdEmpleadoQuery), true);
             Assert.Equal(Guid.Empty, command.Id);
         }

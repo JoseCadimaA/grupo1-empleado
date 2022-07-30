@@ -17,10 +17,8 @@ using System.Threading.Tasks;
 using Xunit;
 using static Moq.It;
 
-namespace EmpleadoTest.Application.UseCases.Handler
-{
-    public class AddNavegacionHandler_Test
-    {
+namespace EmpleadoTest.Application.UseCases.Handler {
+    public class AddNavegacionHandler_Test {
         private readonly Mock<IHistoricoNavegacionRepository> historicoRepository;
         private readonly Mock<ILogger<AddNavegacionHandler>> logger;
         private readonly Mock<IHistoricoNavegacionFactory> historicoFactory;
@@ -36,8 +34,7 @@ namespace EmpleadoTest.Application.UseCases.Handler
         private string origen_Test = "SC";
         private string destino_Test = "LP";
 
-        public AddNavegacionHandler_Test()
-        {
+        public AddNavegacionHandler_Test() {
             historicoRepository = new Mock<IHistoricoNavegacionRepository>();
             logger = new Mock<ILogger<AddNavegacionHandler>>();
             historicoFactory = new Mock<IHistoricoNavegacionFactory>();
@@ -49,8 +46,7 @@ namespace EmpleadoTest.Application.UseCases.Handler
         }
 
         [Fact]
-        public void CrearHistoricoHandler_HandleCorrectly()
-        {
+        public void CrearHistoricoHandler_HandleCorrectly() {
             //_empleadoService.Setup(empleadoService => empleadoService  .GenerarNroPedidoAsync()).Returns(Task.FromResult(nroPedidoTest));
             historicoFactory.Setup(historicoFactory => historicoFactory.Create(empleadoID_Test, horasRealizada_Test, millas_Test, origen_Test, destino_Test)).Returns(objHistoricoTest);
 
@@ -64,7 +60,7 @@ namespace EmpleadoTest.Application.UseCases.Handler
 
             var tcs = new CancellationTokenSource(1000);
             var result = objHandler.Handle(objRequest, tcs.Token);
-            
+
             historicoRepository.Verify(mock => mock.RegistrarNavegacion(IsAny<HistoricoNavegacion>()), Times.Once);
             unitOfWork.Verify(mock => mock.Commit(), Times.Once);
             Assert.IsType<Guid>(result.Result);
