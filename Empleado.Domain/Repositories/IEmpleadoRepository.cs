@@ -6,12 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Empleados.Domain.Repositories
-{
-    public interface IEmpleadoRepository : IRepository<Empleado, Guid>
-    {
+namespace Empleados.Domain.Repositories {
+    public interface IEmpleadoRepository : IRepository<Empleado, Guid> {
         Task RegistrarEmpleado(Empleado obj);
-      
+
 
     }
 }

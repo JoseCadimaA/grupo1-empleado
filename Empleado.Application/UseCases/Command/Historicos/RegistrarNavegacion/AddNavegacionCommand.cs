@@ -2,14 +2,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace Empleados.Application.UseCases.Command.Historicos.AddNavegacion
-{
-    public class AddNavegacionCommand : IRequest<Guid>
-    {
+namespace Empleados.Application.UseCases.Command.Historicos.AddNavegacion {
+    public class AddNavegacionCommand : IRequest<Guid> {
         private AddNavegacionCommand() { }
 
-        public AddNavegacionCommand(string empleadoID, int horasRealizada, int millas, string origen, string destino)
-        {
+        public AddNavegacionCommand(string empleadoID, int horasRealizada, int millas, string origen, string destino) {
             EmpleadoID = empleadoID;
             HorasRealizada = horasRealizada;
             Millas = millas;

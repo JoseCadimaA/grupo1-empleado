@@ -2,14 +2,11 @@
 using MediatR;
 using System;
 
-namespace Empleados.Application.UseCases.Queries.Empleados.GetEmpleadoById
-{
-    public class GetEmpleadoByIdQuery : IRequest<EmpleadoDto>
-    {
+namespace Empleados.Application.UseCases.Queries.Empleados.GetEmpleadoById {
+    public class GetEmpleadoByIdQuery : IRequest<EmpleadoDto> {
         public Guid Id { get; set; }
 
-        public GetEmpleadoByIdQuery(Guid id)
-        {
+        public GetEmpleadoByIdQuery(Guid id) {
             Id = id;
         }
 
