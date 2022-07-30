@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Empleados.Infraestructure.EF.Repository {
     public class EmpleadoRepository : IEmpleadoRepository {
-
+        abc
         public Task CreateAsync(Domain.Model.Empleado.Empleado obj) {
             Console.WriteLine($"Insertando el empleado { obj.CI }");
 
