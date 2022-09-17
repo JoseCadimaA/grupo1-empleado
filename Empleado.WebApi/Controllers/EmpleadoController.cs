@@ -1,4 +1,7 @@
-﻿using Empleado.Application.Dto.Historicos;
+﻿using System;
+using System.Threading.Tasks;
+using Empleado.Application.Dto.Historicos;
+using Empleado.Application.UseCases.Command.Empleados.RegistrarTripulante;
 using Empleados.Application.Dto.Empleados;
 using Empleados.Application.UseCases.Command.Empleados.AddEmpleado;
 using Empleados.Application.UseCases.Command.Historicos.AddNavegacion;
@@ -6,8 +9,6 @@ using Empleados.Application.UseCases.Queries.Empleados.GetEmpleadoById;
 using Empleados.Application.UseCases.Queries.Empleados.GetHistoricoByIdEmpleado;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 
 namespace Empleados.WebApi.Controllers {
     [ApiController]
@@ -30,6 +31,27 @@ namespace Empleados.WebApi.Controllers {
 
             return Ok(id);
         }
+        [Route("CreateTripulantes")]
+        [HttpPost]
+        public async Task<IActionResult> CreateTripulantes([FromBody] AddTripulanteCommand command) {
+            Guid id = await _mediator.Send(command);
+
+            if (id == Guid.Empty)
+                return BadRequest();
+
+            return Ok(id);
+        }
+
+        [Route("GetTripulaciones")]
+        [HttpGet]
+        public async Task<IActionResult> GetTripulaciones([FromRoute] GetEmpleadoByIdQuery command) {
+            EmpleadoDto result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
 
         [Route("{id:guid}")]
         [HttpGet]
@@ -41,7 +63,6 @@ namespace Empleados.WebApi.Controllers {
 
             return Ok(result);
         }
-
 
         [Route("AddHistorico")]
         [HttpPost]
