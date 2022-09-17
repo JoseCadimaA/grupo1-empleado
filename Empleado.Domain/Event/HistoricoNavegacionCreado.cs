@@ -1,9 +1,5 @@
-﻿using ShareKernel.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using ShareKernel.Core;
 
 namespace Empleados.Domain.Event {
     public record HistoricoNavegacionCreado : DomainEvent {

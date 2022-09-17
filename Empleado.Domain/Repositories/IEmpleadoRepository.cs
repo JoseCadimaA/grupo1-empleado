@@ -1,14 +1,11 @@
-﻿using Empleados.Domain.Model.Empleado;
-using ShareKernel.Core;
+﻿
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using ShareKernel.Core;
 
 namespace Empleados.Domain.Repositories {
-    public interface IEmpleadoRepository : IRepository<Empleado, Guid> {
-        Task RegistrarEmpleado(Empleado obj);
+    public interface IEmpleadoRepository : IRepository<Empleado.Domain.Model.Empleados.Empleado, Guid> {
+        Task RegistrarEmpleado(Empleado.Domain.Model.Empleados.Empleado obj);
 
 
     }

@@ -1,9 +1,4 @@
 ﻿using Empleados.Domain.Model.Historico;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Empleados.Domain.Factories {
     public class HistoricoNavegacionFactory : IHistoricoNavegacionFactory {
