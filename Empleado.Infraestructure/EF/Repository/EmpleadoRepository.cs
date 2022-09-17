@@ -1,37 +1,35 @@
 ﻿
-using Empleados.Domain.Repositories;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Empleados.Domain.Repositories;
+using ShareKernel.Core;
+
 
 namespace Empleados.Infraestructure.EF.Repository {
     public class EmpleadoRepository : IEmpleadoRepository {
 
-        public int MyProperty { get; set; }
-
-        public Task CreateAsync(Domain.Model.Empleado.Empleado obj) {
-            Console.WriteLine($"Insertando el empleado { obj.CI }");
+        public Task CreateAsync(Empleado.Domain.Model.Empleados.Empleado obj) {
+            Console.WriteLine($"Insertando el empleado {obj.CI}");
 
             return Task.CompletedTask;
         }
 
-        public Task<Domain.Model.Empleado.Empleado> FindByFKAsync(string idFk) {
+        public Task<Empleado.Domain.Model.Empleados.Empleado> FindByFKAsync(string idFk) {
             return null;
         }
 
-        public Task<Domain.Model.Empleado.Empleado> FindByIdAsync(Guid id) {
-            Console.WriteLine($"Retornando el empleado { id }");
 
-            return null;
-        }
 
-        public Task RegistrarEmpleado(Domain.Model.Empleado.Empleado obj) {
-            Console.WriteLine($"Insertando el empleado { obj.CI }");
+        public Task RegistrarEmpleado(Empleado.Domain.Model.Empleados.Empleado obj) {
             return Task.CompletedTask;
         }
 
+        Task<Empleado.Domain.Model.Empleados.Empleado> IRepository<Empleado.Domain.Model.Empleados.Empleado, Guid>.FindByFKAsync(string idFk) {
+            return null;
+        }
 
+        Task<Empleado.Domain.Model.Empleados.Empleado> IRepository<Empleado.Domain.Model.Empleados.Empleado, Guid>.FindByIdAsync(Guid id) {
+            throw new NotImplementedException();
+        }
     }
 }

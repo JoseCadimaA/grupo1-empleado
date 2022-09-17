@@ -1,16 +1,11 @@
-﻿using Empleados.Domain.Model.Empleado;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Empleados.Infraestructure.MemoryRepository {
     public class MemoryDatabase {
-        private readonly List<Domain.Model.Empleado.Empleado> _empleados;
+        private readonly List<Empleado.Domain.Model.Empleados.Empleado> _empleados;
         private readonly List<Domain.Model.Historico.HistoricoNavegacion> _historicos;
 
-        public List<Domain.Model.Empleado.Empleado> Empleados {
+        public List<Empleado.Domain.Model.Empleados.Empleado> Empleados {
             get { return _empleados; }
         }
 
@@ -19,7 +14,7 @@ namespace Empleados.Infraestructure.MemoryRepository {
         }
 
         public MemoryDatabase() {
-            _empleados = new List<Domain.Model.Empleado.Empleado>();
+            _empleados = new List<Empleado.Domain.Model.Empleados.Empleado>();
             _historicos = new List<Domain.Model.Historico.HistoricoNavegacion>();
         }
 

@@ -1,12 +1,8 @@
-﻿using Empleados.Domain.Model.Historico;
-using Empleados.Domain.Repositories;
-using Empleados.Infraestructure.MemoryRepository;
-using ShareKernel.Core;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Empleados.Domain.Model.Historico;
+using Empleados.Domain.Repositories;
 
 namespace Empleados.Infraestructure.MemoryRepository {
     public class MemoryHistoricoRepository : IHistoricoNavegacionRepository {
