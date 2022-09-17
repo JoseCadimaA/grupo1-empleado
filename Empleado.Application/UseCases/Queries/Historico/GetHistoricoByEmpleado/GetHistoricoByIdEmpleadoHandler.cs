@@ -1,11 +1,11 @@
-﻿using MediatR;
-using Microsoft.Extensions.Logging;
-using Empleados.Domain.Repositories;
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Empleado.Application.Dto.Historicos;
 using Empleados.Domain.Model.Historico;
+using Empleados.Domain.Repositories;
+using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace Empleados.Application.UseCases.Queries.Empleados.GetHistoricoByIdEmpleado {
     public class GetHistoricoByIdEmpleadoHandler : IRequestHandler<GetHistoricoByIdEmpleadoQuery, HistoricoNavegacionDto> {

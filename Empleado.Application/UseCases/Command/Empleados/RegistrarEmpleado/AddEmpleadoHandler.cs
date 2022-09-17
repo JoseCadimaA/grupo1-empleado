@@ -1,13 +1,12 @@
-﻿using MediatR;
-using Microsoft.Extensions.Logging;
-using Empleados.Application.Services;
-using Empleados.Domain.Factories;
-using Empleados.Domain.Repositories;
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Empleados.Application.UseCases.Command.Empleados.AddEmpleado;
-using Empleados.Domain.Model.Empleado;
+using Empleados.Domain.Factories;
+using Empleados.Domain.Repositories;
+using MediatR;
+using Microsoft.Extensions.Logging;
+
 
 namespace Empleados.Application.UseCases.Command.Empleados.CrearEmpleado {
     public class AddEmpleadoHandler : IRequestHandler<AddEmpleadoCommand, Guid> {
@@ -26,9 +25,12 @@ namespace Empleados.Application.UseCases.Command.Empleados.CrearEmpleado {
 
         public async Task<Guid> Handle(AddEmpleadoCommand request, CancellationToken cancellationToken) {
             try {
-                Domain.Model.Empleado.Empleado objEmpleado = _empleadoFactory.Create(request.NombreCompleto, request.FechaNacimiento, request.CI);
+                Empleado.Domain.Model.Empleados.Empleado objEmpleado = _empleadoFactory.Create(request.NombreCompleto, request.FechaNacimiento, request.CI);
 
-                objEmpleado.RegistrarEmpleado();
+                //foreach (var item in request.Detalle.tripulaciones) {
+                //    objEmpleado.AgregarItem(item.codTripulacion, item.codEmpleado, item.estado, item.activo);
+                //}
+                //objEmpleado.RegistrarEmpleado();
 
                 await _empleadoRepository.CreateAsync(objEmpleado);
 

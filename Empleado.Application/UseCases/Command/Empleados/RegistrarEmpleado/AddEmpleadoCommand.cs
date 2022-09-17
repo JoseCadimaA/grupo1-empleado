@@ -1,6 +1,5 @@
-﻿using MediatR;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using MediatR;
 
 namespace Empleados.Application.UseCases.Command.Empleados.AddEmpleado {
     public class AddEmpleadoCommand : IRequest<Guid> {

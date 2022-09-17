@@ -1,9 +1,4 @@
-﻿using Empleados.Domain.Model.Historico;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Empleado.Application.Dto.Historicos {
     public class HistoricoNavegacionDto {

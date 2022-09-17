@@ -1,7 +1,7 @@
 ﻿
+using System;
 using Empleado.Application.Dto.Historicos;
 using MediatR;
-using System;
 
 namespace Empleados.Application.UseCases.Queries.Empleados.GetHistoricoByIdEmpleado {
     public class GetHistoricoByIdEmpleadoQuery : IRequest<HistoricoNavegacionDto> {

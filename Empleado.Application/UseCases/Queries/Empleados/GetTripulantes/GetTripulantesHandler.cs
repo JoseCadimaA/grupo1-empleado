@@ -7,11 +7,11 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 
 namespace Empleados.Application.UseCases.Queries.Empleados.GetEmpleadoById {
-    public class GetEmpleadoByIdHandler : IRequestHandler<GetEmpleadoByIdQuery, EmpleadoDto> {
+    public class GetTripulantesHandler : IRequestHandler<GetEmpleadoByIdQuery, EmpleadoDto> {
         private readonly IEmpleadoRepository _empleadoRepository;
         private readonly ILogger<GetEmpleadoByIdQuery> _logger;
 
-        public GetEmpleadoByIdHandler(IEmpleadoRepository empleadoRepository, ILogger<GetEmpleadoByIdQuery> logger) {
+        public GetTripulantesHandler(IEmpleadoRepository empleadoRepository, ILogger<GetEmpleadoByIdQuery> logger) {
             _empleadoRepository = empleadoRepository;
             _logger = logger;
         }
@@ -19,17 +19,17 @@ namespace Empleados.Application.UseCases.Queries.Empleados.GetEmpleadoById {
         public async Task<EmpleadoDto> Handle(GetEmpleadoByIdQuery request, CancellationToken cancellationToken) {
             EmpleadoDto result = null;
             try {
-                Empleado.Domain.Model.Empleados.Empleado objEmpleado = await _empleadoRepository.FindByIdAsync(request.Id);
+                //Empleado.Domain.Model.Empleados.Empleado objEmpleado = await _empleadoRepository.FindByIdAsync(request.Id);
 
-                result = new EmpleadoDto() {
-                    Id = objEmpleado.Id,
-                    NombreCompleto = objEmpleado.NombreCompleto,
-                    FechaNacimiento = objEmpleado.FechaNacimiento,
-                    CI = objEmpleado.CI,
-                };
+                //result = new EmpleadoDto() {
+                //    Id = objEmpleado.Id,
+                //    NombreCompleto = objEmpleado.NombreCompleto,
+                //    FechaNacimiento = objEmpleado.FechaNacimiento,
+                //    CI = objEmpleado.CI,
+                //};
             }
             catch (Exception ex) {
-                _logger.LogError(ex, "Error al obtener Empleado con id: { EmpleadoId }", request.Id);
+                //_logger.LogError(ex, "Error al obtener Empleado con id: { EmpleadoId }", request.Id);
             }
 
             return result;

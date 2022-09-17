@@ -3,13 +3,13 @@ using Empleados.Application.Dto.Empleados;
 using MediatR;
 
 namespace Empleados.Application.UseCases.Queries.Empleados.GetEmpleadoById {
-    public class GetEmpleadoByIdQuery : IRequest<EmpleadoDto> {
+    public class GetTripulantesQuery : IRequest<EmpleadoDto> {
         public Guid Id { get; set; }
 
-        public GetEmpleadoByIdQuery(Guid id) {
+        public GetTripulantesQuery(Guid id) {
             Id = id;
         }
 
-        public GetEmpleadoByIdQuery() { }
+        public GetTripulantesQuery() { }
     }
 }

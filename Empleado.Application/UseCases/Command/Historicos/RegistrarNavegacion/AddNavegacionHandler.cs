@@ -1,13 +1,12 @@
-﻿using MediatR;
-using Microsoft.Extensions.Logging;
-using Empleados.Application.Services;
-using Empleados.Domain.Factories;
-using Empleados.Domain.Repositories;
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Empleados.Domain.Model.Historico;
 using Empleados.Application.UseCases.Command.Historicos.AddNavegacion;
+using Empleados.Domain.Factories;
+using Empleados.Domain.Model.Historico;
+using Empleados.Domain.Repositories;
+using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace Empleados.Application.UseCases.Command.Empleados.CrearEmpleado {
     public class AddNavegacionHandler : IRequestHandler<AddNavegacionCommand, Guid> {
